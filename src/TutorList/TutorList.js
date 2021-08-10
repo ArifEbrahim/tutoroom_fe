@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Tutor from '../Tutor/Tutor'
 
-const api_url = 'http://localhost:3001/api/users'
+const api_url = 'https://tutoroom.herokuapp.com/api/users'
 
 class TutorList extends Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class TutorList extends Component {
     return (
       <div className='tutor-list'>
         {this.state.tutors.map((tutor) => (
-          <Tutor name={tutor.name} key={tutor.id} subject={tutor.subject} email={tutor.email}/>
+          <Tutor key={tutor.id} tutor={tutor}/>
         ))}
       </div>
     )
