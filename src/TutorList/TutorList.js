@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Tutor from '../Tutor/Tutor'
+import Tutor from './Tutor'
 
 const api_url = 'https://tutoroom.herokuapp.com/api/users'
 

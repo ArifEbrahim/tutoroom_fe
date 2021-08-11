@@ -1,13 +1,12 @@
 .App{
   min-height: 100vh;
-  background: lightgray;
 }
 
 .tutor{
   height: 300px;
   width: 300px;
-  background: whitesmoke;
   border-radius: 30px;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
