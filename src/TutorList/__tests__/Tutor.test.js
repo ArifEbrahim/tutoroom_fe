@@ -8,20 +8,21 @@ const mockTutor = {
   email: 'test@example.com'
 }
 
-test('displays the name of a tutor', () => {
+beforeEach(()=>{
   render(<Tutor tutor={mockTutor}/>)
+})
+
+test('displays the name of a tutor', () => {
   const nameEl = screen.getByText('Name: Bob')
   expect(nameEl).toBeInTheDocument()
 })
 
 test('displays the subject of a tutor', () => {
-  render(<Tutor tutor={mockTutor}/>)
   const subjectEl = screen.getByText('Subject: Boring')
   expect(subjectEl).toBeInTheDocument()
 })
 
-test('displays the email of a tutor', () => {
-  render(<Tutor tutor={mockTutor}/>)
+test('displays a link to email a tutor', () => {
   const emailEl = screen.getByText('Email')
   expect(emailEl.closest('a')).toHaveAttribute('href', 'mailto:test@example.com')
 })
