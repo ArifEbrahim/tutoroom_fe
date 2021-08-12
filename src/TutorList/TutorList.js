@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Tutor from './Tutor'
 import SearchBar from './SearchBar'
 import { Container } from 'react-bootstrap'
+import axios from 'axios'
+
 
 const api_url = 'https://tutoroom.herokuapp.com/api/users'
 
@@ -14,11 +16,11 @@ export default function TutorList() {
   }, [])
 
   const getAllTutors = () => {
-    fetch(api_url)
-    .then(response => response.json())
-    .then(tutors => {
-      setAllTutors(tutors)
-      setFilteredTutors(tutors)
+    axios.get(api_url)
+    .then(response => {
+      console.log(response)
+      setAllTutors(response.data)
+      setFilteredTutors(response.data)
     })
   }
 
