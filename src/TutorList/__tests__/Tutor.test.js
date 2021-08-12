@@ -18,14 +18,14 @@ describe('Tutor', () => {
     expect(nameEl).toBeInTheDocument()
   })
 
-  it('displays the subject of a tutor', () => {
-    const subjectEl = screen.getByText('Boring')
-    expect(subjectEl).toBeInTheDocument()
-  })
+  // it('displays the bio of a tutor', () => {
+  //   const subjectEl = screen.getByText('Boring')
+  //   expect(subjectEl).toBeInTheDocument()
+  // })
 
-  it('displays a link to email a tutor', () => {
-    const emailEl = screen.getByText('Send Email')
-    expect(emailEl.closest('a')).toHaveAttribute('href', 'mailto:test@example.com')
+  it('displays a link to view tutor profile', () => {
+    const linkEl = screen.getByText('View Profile')
+    expect(linkEl.closest('a')).toHaveAttribute('href', '/')
   })
 })
 

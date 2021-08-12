@@ -1,23 +1,29 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import TutorList from '../TutorList'
 
 
 describe('TutorList', () => {
-  beforeEach(()=>{
-    render(<TutorList />)
-  })
+  // beforeEach(()=>{
+  //   render(<TutorList />)
+  // })
 
   test('the search bar is rendered correctly', () => {
-    const searchEl = screen.getByPlaceholderText('What do you want to learn about?');
+    render(<TutorList />)
+    const inputEl = screen.getByPlaceholderText('What do you want to learn about?');
     const searchBtn = screen.getByText('Search')
-    expect(searchEl).toBeInTheDocument();
+    expect(inputEl).toBeInTheDocument();
     expect(searchBtn).toBeInTheDocument();
   })
 
   // test('clicking the search button generates results', ()=> {
-  //   const tutorName = screen.getByText('Mike')
-  //   expect(tutorName).not.toBeInTheDocument;
+  //   const inputEl = screen.getByPlaceholderText('What do you want to learn about?');
+  //   const searchBtn = screen.getByText('Search')
+  //   fireEvent.change(inputEl, {
+  //     target: {
+  //       value: 'cooking'
+  //     }})
+  //   fireEvent.click(searchBtn)
   // })
 
 

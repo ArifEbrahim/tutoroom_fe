@@ -5,16 +5,29 @@ import { InputGroup, FormControl, Button, Container } from 'react-bootstrap';
 const api_url = 'https://tutoroom.herokuapp.com/api/users'
 
 export default function TutorList() {
-  const [tutors, setTutors] = useState([])
+  const [allTutors, setAllTutors] = useState([])
+  const [filteredTutors, setFilteredTutors] = useState([])
 
   useEffect(() => {
-    getTutors();
-  })
+    getAllTutors();
+  }, [])
 
-  const getTutors = () => {
+  const getAllTutors = () => {
     fetch(api_url)
     .then(response => response.json())
-    .then(tutors => setTutors(tutors))
+    .then(tutors => {
+      setAllTutors(tutors);
+      setFilteredTutors(tutors)
+    })
+  }
+
+  const handleSearch = (e) =>{
+    let searchValue = document.getElementById('searchText').value
+    let filteredResult;
+    filteredResult = allTutors.filter((data) => {
+      return data.subject === searchValue;
+    });
+    setFilteredTutors(filteredResult)
   }
 
   return (
@@ -23,15 +36,15 @@ export default function TutorList() {
         <div>
           <InputGroup className="m-3 p-3" size='lg'>
             <FormControl
-            placeholder='What do you want to learn about?'
+            placeholder='What do you want to learn about?' id='searchText'
             />
-          <Button variant='outline-secondary'>
+          <Button variant='outline-secondary' onClick={handleSearch}>
             Search
           </Button>
           </InputGroup>
         </div>
         <div className='tutor-list'>
-        {tutors.map((tutor) => (
+        {filteredTutors.map((tutor) => (
           <Tutor key={tutor.id} tutor={tutor}/>
         ))}
         </div>
