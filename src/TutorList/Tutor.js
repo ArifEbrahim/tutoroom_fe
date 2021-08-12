@@ -1,11 +1,20 @@
 import React from 'react'
+import { Button, Card } from 'react-bootstrap';
 
 export default function Tutor(props) {
   return (
     <div className='tutor'>
-      <h3>Name: {props.tutor.name}</h3>
-      <p>Subject: {props.tutor.subject}</p>
-      <a href={`mailto:${props.tutor.email}`}>Email</a>
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" />
+        <Card.Body>
+          <Card.Title>{props.tutor.name}</Card.Title>
+          <Card.Text>{props.tutor.bio}</Card.Text>
+          <Button href="">View Profile</Button>
+        </Card.Body>
+      </Card>
     </div>
   )
 }
+
+
+

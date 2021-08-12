@@ -14,17 +14,17 @@ describe('Tutor', () => {
   })
 
   it('displays the name of a tutor', () => {
-    const nameEl = screen.getByText('Name: Bob')
+    const nameEl = screen.getByText('Bob')
     expect(nameEl).toBeInTheDocument()
   })
 
   it('displays the subject of a tutor', () => {
-    const subjectEl = screen.getByText('Subject: Boring')
+    const subjectEl = screen.getByText('Boring')
     expect(subjectEl).toBeInTheDocument()
   })
 
   it('displays a link to email a tutor', () => {
-    const emailEl = screen.getByText('Email')
+    const emailEl = screen.getByText('Send Email')
     expect(emailEl.closest('a')).toHaveAttribute('href', 'mailto:test@example.com')
   })
 })
