@@ -17,10 +17,15 @@ export default function TutorList() {
   }
 
   return (
-    <div className='tutor-list'>
-    {tutors.map((tutor) => (
-      <Tutor key={tutor.id} tutor={tutor}/>
-    ))}
-    </div>
+    <>
+      <div>
+        <h1>Tutors</h1>
+      </div>
+      <div className='tutor-list'>
+      {tutors.map((tutor) => (
+        <Tutor key={tutor.id} tutor={tutor}/>
+      ))}
+      </div>
+    </>
   )
 }
