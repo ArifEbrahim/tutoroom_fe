@@ -18,7 +18,6 @@ export default function TutorList() {
   const getAllTutors = () => {
     axios.get(api_url)
     .then(response => {
-      console.log(response)
       setAllTutors(response.data)
       setFilteredTutors(response.data)
     })
