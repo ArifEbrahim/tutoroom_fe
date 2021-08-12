@@ -13,9 +13,7 @@ export default function TutorList() {
   const getTutors = () => {
     fetch(api_url)
     .then(response => response.json())
-    .then(tutors => {
-      setTutors(tutors)
-    })
+    .then(tutors => setTutors(tutors))
   }
 
   return (
