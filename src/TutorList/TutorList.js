@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Tutor from './Tutor'
-import { InputGroup, FormControl, Button, Container } from 'react-bootstrap';
+import SearchBar from './SearchBar'
+import { Container } from 'react-bootstrap'
 
 const api_url = 'https://tutoroom.herokuapp.com/api/users'
 
@@ -9,14 +10,14 @@ export default function TutorList() {
   const [filteredTutors, setFilteredTutors] = useState([])
 
   useEffect(() => {
-    getAllTutors();
+    getAllTutors()
   }, [])
 
   const getAllTutors = () => {
     fetch(api_url)
     .then(response => response.json())
     .then(tutors => {
-      setAllTutors(tutors);
+      setAllTutors(tutors)
       setFilteredTutors(tutors)
     })
   }
@@ -33,16 +34,7 @@ export default function TutorList() {
   return (
     <>
       <Container>
-        <div>
-          <InputGroup className="m-3 p-3" size='lg'>
-            <FormControl
-            placeholder='What do you want to learn about?' id='searchText'
-            />
-          <Button variant='outline-secondary' onClick={handleSearch}>
-            Search
-          </Button>
-          </InputGroup>
-        </div>
+        <SearchBar onClick={handleSearch}/>
         <div className='tutor-list'>
         {filteredTutors.map((tutor) => (
           <Tutor key={tutor.id} tutor={tutor}/>
