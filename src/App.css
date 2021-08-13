@@ -1,11 +1,11 @@
-.tutor{
+.tutor {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
-.tutor-list{
+.tutor-list {
   margin: 2em 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -16,4 +16,9 @@
   width: 96%;
   max-width: 1140px;
   margin: 0 auto;
+}
+
+#nav-brand {
+  font-size: 175%;
+  margin: 0;
 }
