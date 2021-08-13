@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react'
 import Tutor from '../Tutor'
 
 const mockTutor = {
@@ -14,18 +14,18 @@ describe('Tutor', () => {
   })
 
   it('displays the name of a tutor', () => {
-    const nameEl = screen.getByText('Name: Bob')
+    const nameEl = screen.getByText('Bob')
     expect(nameEl).toBeInTheDocument()
   })
 
-  it('displays the subject of a tutor', () => {
-    const subjectEl = screen.getByText('Subject: Boring')
-    expect(subjectEl).toBeInTheDocument()
-  })
+  // it('displays the bio of a tutor', () => {
+  //   const subjectEl = screen.getByText('Boring')
+  //   expect(subjectEl).toBeInTheDocument()
+  // })
 
-  it('displays a link to email a tutor', () => {
-    const emailEl = screen.getByText('Email')
-    expect(emailEl.closest('a')).toHaveAttribute('href', 'mailto:test@example.com')
+  it('displays a link to view tutor profile', () => {
+    const linkEl = screen.getByText('View Profile')
+    expect(linkEl.closest('a')).toHaveAttribute('href', '/')
   })
 })
 
