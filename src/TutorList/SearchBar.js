@@ -8,7 +8,7 @@ export default function SearchBar(props) {
         <FormControl
         placeholder='What do you want to learn about?' id='searchText'
         />
-        <Button variant='outline-secondary' onClick={props.onClick}>
+        <Button variant='outline-success' onClick={props.onClick}>
           Search
         </Button>
       </InputGroup>
