@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 export default function Tutor(props) {
   return (
@@ -9,7 +10,7 @@ export default function Tutor(props) {
         <Card.Body>
           <Card.Title>{props.tutor.name}</Card.Title>
           <Card.Text>{props.tutor.bio}</Card.Text>
-          <Button href="/">View Profile</Button>
+          <Button as={Link} to={`/search/${props.tutor.id}`}>View Profile</Button>
         </Card.Body>
       </Card>
     </div>

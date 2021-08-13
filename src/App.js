@@ -3,9 +3,10 @@ import Navigation from './Nav/Navigation'
 import Home from './auth/Login';
 import Signup from './auth/Signup';
 import TutorList from './TutorList/TutorList';
-import Profile from './Profile/Profile'
+import Profile from './Profile/MyProfile'
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import TutorProfile from './Profile/TutorProfile'
 
 export default function App() {
   return (
@@ -21,6 +22,9 @@ export default function App() {
           </Route>
           <Route exact path="/search">
             <TutorList />
+          </Route>
+          <Route exact path="/search/:id">
+            <TutorProfile />
           </Route>
           <Route exact path="/profile">
             <Profile />
