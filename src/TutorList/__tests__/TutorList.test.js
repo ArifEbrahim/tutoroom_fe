@@ -1,13 +1,22 @@
-// import React from 'react';
-// import { render } from '@testing-library/react'
-// import TutorList from '../TutorList'
-// import axios from 'axios'
+import React from 'react';
+import { render, waitFor } from '@testing-library/react'
+import TutorList from '../TutorList'
+import axios from '../__mocks__/axios'
 
 // jest.mock('axios')
-
-test('it makes a call to the heroku api', async () => {
+// global.axios = axios
+test('it makes a call to the heroku api',  async () => {
+  // let container = document.createElement('div');
   // jest.spyOn(axios, 'get').mockResolvedValue({ data: [] });
-  // axios.get.mockImplementationOnce(() => Promise.resolve({ data: []}));
-  // await render(<TutorList />)
-  // expect(axios).toHaveBeenCalled()
+  axios.get.mockResolvedValueOnce({ data: []})
+  // return act(() => {
+  //   return Promise.resolve({ data: []})
+  // })
+  // act(() => {
+    render(<TutorList />)
+  // })
+  await waitFor(() => {
+    expect(axios.get).toHaveBeenCalled()
+  });
+  
 })
