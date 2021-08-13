@@ -24,10 +24,10 @@ export default function TutorList() {
   }
 
   const handleSearch = (e) =>{
-    let searchValue = document.getElementById('searchText').value
+    let searchValue = document.getElementById('searchText').value.toLowerCase()
     let filteredResult;
     filteredResult = allTutors.filter((data) => {
-      return data.subject === searchValue;
+      return data.subject.toLowerCase() === searchValue;
     });
     setFilteredTutors(filteredResult)
   }
