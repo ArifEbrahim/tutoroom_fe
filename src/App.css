@@ -6,7 +6,17 @@
 }
 
 .tutor-list{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  /* display: flex; 
+  align-items: center; 
+  justify-content: space-around; */
+  margin: 2em 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 48px;
+}
+
+.wrapper {
+  width: 96%;
+  max-width: 1140px;
+  margin: 0 auto;
 }
