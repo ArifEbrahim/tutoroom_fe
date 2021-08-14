@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-//  import axios from 'axios'
+import axios from 'axios'
 
 export default function Signup() {
   // const teacher = false
@@ -9,21 +9,22 @@ export default function Signup() {
   const [email, setEmail] = useState("email");
   const [password, setPassword] = useState("password");
   const [password_confirmation, setConfirmedPassword] = useState("confirm password");
-  const username = "thisuser"
+  const username = "fromreact"
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = {user:{email, subject, password, password_confirmation, username, teacher,}}
     console.log(user)
 
-    fetch('http://localhost:3001/api/users', {
-      mode: 'no-cors',
-      method: 'POST', 
-      headers: { "Content-Type": "json"},
-      body: JSON.stringify(user)
-    }).then(() => {
-      console.log(user)
-    })
+    axios.post("http://localhost:3001/api/users", user).then(
+      res => {
+        console.log(res)
+      }
+    ).catch(
+      err => {
+        console.log(err)
+      }
+    )
   }
 
   
@@ -81,3 +82,4 @@ export default function Signup() {
     </div>
   );
 }
+
