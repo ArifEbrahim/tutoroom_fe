@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap'
 import axios from 'axios'
 
 
-const api_url = 'https://tutoroom.herokuapp.com/api/users'
+const api_url = 'https://team-tutoroom.herokuapp.com/api/v1/tutors'
 // const api_url='http://localhost:3001/api/users'
 
 export default function TutorList() {
