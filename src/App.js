@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './auth/Login';
 import Signup from './auth/Signup';
-import TutorList from './tutorList/TutorList';
+import TutorList from './TutorList/TutorList';
 import React from "react";
 import {
   BrowserRouter as Router,

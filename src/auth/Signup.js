@@ -1,27 +1,31 @@
 import React from 'react'
 import { useState } from 'react'
-// import axios from 'axios'
+//  import axios from 'axios'
 
 export default function Signup() {
-  const [userType, setUserType] = useState("student");
+  // const teacher = false
+  const [teacher, setUserType] = useState(false);
   const [subject, setSubject] = useState(" ");
   const [email, setEmail] = useState("email");
   const [password, setPassword] = useState("password");
-  const [confirmedPassword, setConfirmedPassword] = useState("confirm password");
+  const [password_confirmation, setConfirmedPassword] = useState("confirm password");
+  const username = "thisuser"
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const user = {userType, subject, email, password, confirmedPassword};
+    const user = {user:{email, subject, password, password_confirmation, username, teacher,}}
     console.log(user)
 
-    fetch('https://tutoroom.herokuapp.com/api/users', {
+    fetch('http://localhost:3001/api/users', {
+      mode: 'no-cors',
       method: 'POST', 
-      headers: { "Content-Type": "application/json"},
+      headers: { "Content-Type": "json"},
       body: JSON.stringify(user)
     }).then(() => {
       console.log(user)
     })
   }
+
   
   return (
     <div className="signup-form">
@@ -29,7 +33,7 @@ export default function Signup() {
         <label>
           <input 
             type="radio"
-            value={userType}
+            value={teacher}
             onChange={(e) => setUserType(e.target.value)}
             />
             Student
@@ -38,7 +42,7 @@ export default function Signup() {
         <label>
           <input 
             type="radio"
-            value={userType}
+            value={teacher}
             onChange={(e) => setUserType(e.target.value)}
             />
             Tutor
