@@ -23,7 +23,7 @@ export default function TutorProfile() {
     <Container>
       <Row className='mt-3'>
         <Col xs={4} className='text-center'>
-          <Image className='img-thumbnail' src={mockData[0].attributes.image_url} />
+          <Image id='profile-img' src={mockData[0].attributes.image_url} />
           <h2>{mockData[0].attributes.name}</h2>
           <Twitter className='mx-2'/><Facebook className='mx-2'/><Linkedin className='mx-2'/><Instagram className='mx-2'/>
           <div className='mt-3'></div>
