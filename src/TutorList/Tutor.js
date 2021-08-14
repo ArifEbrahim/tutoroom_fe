@@ -11,12 +11,10 @@ export default function Tutor(props) {
     shortBio = tutorData.bio
   }
 
- 
-
   return (
     <div className='tutor'>
       <Card style={{ width: '16rem' }}>
-        <Card.Img id='profile-img' variant="top" src={tutorData.image_url}/>
+        <Card.Img id='search-img' variant="top" src={tutorData.image_url}/>
         <Card.Body className='text-center'>
           <Card.Title>{tutorData.name}</Card.Title>
           <Card.Text>{shortBio}</Card.Text>
