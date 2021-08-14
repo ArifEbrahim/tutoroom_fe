@@ -3,32 +3,31 @@ import Tutor from './Tutor'
 import SearchBar from './SearchBar'
 import { Container } from 'react-bootstrap'
 import axios from 'axios'
-
-
-const api_url = 'https://tutoroom.herokuapp.com/api/users'
-// const api_url='http://localhost:3001/api/users'
+import './TutorList.css'
 
 export default function TutorList() {
   const [allTutors, setAllTutors] = useState([])
   const [filteredTutors, setFilteredTutors] = useState([])
+  // const api_url = 'https://tutoroom.herokuapp.com/api/users'
+  const api_url='http://localhost:3001/api/v1/tutors'
 
   useEffect(() => {
     getAllTutors()
   }, [])
 
-  const getAllTutors = () => {
-    axios.get(api_url)
+  const getAllTutors = async () => {
+    await axios.get(api_url)
     .then(response => {
-      setAllTutors(response.data)
-      setFilteredTutors(response.data)
+      setAllTutors(response.data.data)
+      setFilteredTutors(response.data.data)
     })
   }
 
   const handleSearch = (e) =>{
     let searchValue = document.getElementById('searchText').value.toLowerCase()
     let filteredResult;
-    filteredResult = allTutors.filter((data) => {
-      return data.subject.toLowerCase() === searchValue;
+    filteredResult = allTutors.filter((tutor) => {
+      return tutor.attributes.subject.toLowerCase() === searchValue;
     });
     setFilteredTutors(filteredResult)
   }
