@@ -30,7 +30,7 @@ export default function Profile() {
       <Row className='mt-3'>
         <Col xs={3} className='text-center'>
           <Image className='img-thumbnail' src={userData.image_url}/>
-          <h2>{userData.name}</h2>
+          <h2>{userData.username}</h2>
           <p>Subject: {userData.subject}</p>
           <Twitter className='mx-2'/><Facebook className='mx-2'/><Linkedin className='mx-2'/><Instagram className='mx-2'/>
           <div className='mt-3'></div>
