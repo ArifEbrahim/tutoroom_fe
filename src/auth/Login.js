@@ -37,10 +37,14 @@ export default function Login() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type='password' required placeholder={password} onChange={(e)=> setPassword(e.target.value)}/>
               </Form.Group>
-              <div className='text-center'>
+              <div className='d-flex justify-content-around'>
+              <Button variant="secondary" size='lg' onClick={history.goBack}>
+                Cancel
+                </Button>
                 <Button variant="success" type="submit" size='lg'>
                 Login
                 </Button>
+
               </div>
             </Form>
         </Card.Body>

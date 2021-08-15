@@ -11,30 +11,20 @@ import TutorProfile from './Profile/TutorProfile'
 
 export default function App() {
   return (
-    <Router>
-      <div>
-        <Navigation />
+    <div className='App'>
+      <Router>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/signup">
-            <Signup />
-          </Route>
-          <Route exact path="/search">
-            <TutorList />
-          </Route>
-          <Route exact path="/search/:id">
-            <TutorProfile />
-          </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={Signup} />
+          <div>
+            <Navigation />
+            <Route exact path='/search' component={TutorList} />
+            <Route exact path='/search/:id' component={TutorProfile} />
+            <Route exact path='/profile' component={Profile} />
+          </div>
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
