@@ -4,12 +4,12 @@ import axios from 'axios'
 
 export default function Signup() {
   // const teacher = false
-  const [teacher, setUserType] = useState(false);
+  const [teacher, setUserType] = useState("");
   const [subject, setSubject] = useState(" ");
   const [email, setEmail] = useState("email");
   const [password, setPassword] = useState("password");
   const [password_confirmation, setConfirmedPassword] = useState("confirm password");
-  const username = "fromreact"
+  const [username, setUsername] = useState("username");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,23 +31,38 @@ export default function Signup() {
   return (
     <div className="signup-form">
       <form onSubmit={handleSubmit}>
-        <label>
+        {/* <label>
           <input 
-            type="radio"
+            type="checkbox"
+            class="slider"
             value={teacher}
             onChange={(e) => setUserType(e.target.value)}
             />
             Student
-        </label>
+        </label> */}
+
+        
+ 
+
+        
         
         <label>
           <input 
-            type="radio"
+            type="checkbox"
+            className="slider"
             value={teacher}
-            onChange={(e) => setUserType(e.target.value)}
+            onChange={(e) => setUserType(e.target.value = true)}
             />
-            Tutor
+            Check to sign up as a Tutor
         </label>
+        <br/>
+
+        {/* <label class="switch"></label>
+  <input type="checkbox">
+  <span class="slider"></span> */}
+
+        
+
 
         <label>Subject</label>
           <input 
@@ -76,6 +91,12 @@ export default function Signup() {
           required
           placeholder="confirm password"
           onChange={(e) => setConfirmedPassword(e.target.value)}
+        />
+                <input 
+          type="text"
+          required
+          placeholder="username"
+          onChange={(e) => setUsername(e.target.value)}
         />
         <button>Submit</button>
       </form>
