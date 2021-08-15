@@ -3,6 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 export default function Tutor(props) {
+  console.log(props)
   const tutorData = props.tutor.attributes
   let shortBio;
   if (tutorData.bio.length > 50) {
