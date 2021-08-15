@@ -10,8 +10,6 @@ const api_url = 'https://tutoroom.herokuapp.com/api/users'
 
 export default function TutorList() {
 
-
-
   const [allTutors, setAllTutors] = useState([])
   const [filteredTutors, setFilteredTutors] = useState([])
 
