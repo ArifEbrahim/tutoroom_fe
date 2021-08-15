@@ -6,7 +6,7 @@ export default function Navigation() {
   return (
 <Navbar bg="primary" variant="dark" expand="md">
   <Container>
-    <Navbar.Brand as='h1' id='nav-brand'>Tutoroom</Navbar.Brand>
+    <Navbar.Brand as={Link} to="/" className='h1' id='nav-brand'>Tutoroom</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto">

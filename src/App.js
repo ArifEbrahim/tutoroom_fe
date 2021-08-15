@@ -1,6 +1,7 @@
 import './App.css';
 import Navigation from './Nav/Navigation'
-import Home from './auth/Login';
+import Home from './Home/Home';
+import Login from './auth/Login'
 import Signup from './auth/Signup';
 import TutorList from './TutorList/TutorList';
 import Profile from './Profile/MyProfile'
@@ -16,6 +17,9 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route exact path="/signup">
             <Signup />
