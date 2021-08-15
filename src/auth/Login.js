@@ -18,6 +18,7 @@ export default function Login() {
     })
     .then(response => {
       console.log(response)
+      sessionStorage.setItem('token', response.data.user.token)
       history.push('/search')
     })
   }
