@@ -24,7 +24,7 @@ export default function Login() {
 
   return (
     <div className='d-flex justify-content-center mt-5'>
-      <Card style={{ width: '30rem' }}>
+      <Card style={{ width: '30rem' }} className='shadow p-3 mb-5 bg-body rounded'>
         <Card.Body>
           <Card.Title>Login</Card.Title>
             <Form onSubmit={handleSubmit}>
@@ -36,9 +36,11 @@ export default function Login() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type='password' required placeholder={password} onChange={(e)=> setPassword(e.target.value)}/>
               </Form.Group>
-              <Button variant="primary" type="submit">
-              Submit
-              </Button>
+              <div className='text-center'>
+                <Button variant="success" type="submit" size='lg'>
+                Login
+                </Button>
+              </div>
             </Form>
         </Card.Body>
       </Card>
