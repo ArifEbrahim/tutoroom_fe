@@ -4,10 +4,8 @@ import axios from 'axios'
 
 export default function Signin() {
 
-
   const [email, setEmail] = useState("email");
   const [password, setPassword] = useState("password");
- 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,14 +20,13 @@ export default function Signin() {
         console.log(res.data.user.token)
         console.log(res)
       }
-    ).catch(
-      err => {
-        console.log(err)
-      }
+      ).catch(
+        err => {
+          console.log(err)
+        }
     )
   }
 
-  
   return (
     <div className="signup-form">
       <form onSubmit={handleSubmit}>

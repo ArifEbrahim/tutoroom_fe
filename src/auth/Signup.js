@@ -3,7 +3,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 export default function Signup() {
-  // const teacher = false
+
   const [teacher, setUserType] = useState("");
   const [subject, setSubject] = useState(" ");
   const [email, setEmail] = useState("email");
@@ -31,38 +31,15 @@ export default function Signup() {
   return (
     <div className="signup-form">
       <form onSubmit={handleSubmit}>
-        {/* <label>
-          <input 
-            type="checkbox"
-            class="slider"
-            value={teacher}
-            onChange={(e) => setUserType(e.target.value)}
-            />
-            Student
-        </label> */}
 
-        
- 
 
-        
-        
-        <label>
-          <input 
+        <label>Check box to sign up as a tutor</label>
+        <input 
             type="checkbox"
             className="slider"
             value={teacher}
             onChange={(e) => setUserType(e.target.value = true)}
-            />
-            Check to sign up as a Tutor
-        </label>
-        <br/>
-
-        {/* <label class="switch"></label>
-  <input type="checkbox">
-  <span class="slider"></span> */}
-
-        
-
+          /><br/>
 
         <label>Subject</label>
           <input 
