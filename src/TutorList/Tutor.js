@@ -14,7 +14,7 @@ export default function Tutor(props) {
 
   return (
     <div className='tutor'>
-      <Card style={{ width: '16rem' }}>
+      <Card style={{ width: '16rem' }} className='shadow p-2 m-2 bg-body rounded'>
         <Card.Img id='search-img' variant="top" src={tutorData.image_url}/>
         <Card.Body className='text-center'>
           <Card.Title>{tutorData.name}</Card.Title>
