@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import { Form, Button, Card } from 'react-bootstrap'
+import AuthNav from '../Nav/AuthNav'
 
 export default function Login() {
   const[email, setEmail] = useState('')
@@ -24,6 +25,8 @@ export default function Login() {
   }
 
   return (
+    <>
+    <AuthNav />
     <div className='d-flex justify-content-center mt-5'>
       <Card style={{ width: '30rem' }} className='shadow p-3 mb-5 bg-body rounded'>
         <Card.Body>
@@ -37,7 +40,7 @@ export default function Login() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type='password' required placeholder={password} onChange={(e)=> setPassword(e.target.value)}/>
               </Form.Group>
-              <div className='text-center'>
+              <div className='d-flex justify-content-around'>
                 <Button variant="success" type="submit" size='lg'>
                 Login
                 </Button>
@@ -46,5 +49,6 @@ export default function Login() {
         </Card.Body>
       </Card>
     </div>
+    </>
   )
 }
