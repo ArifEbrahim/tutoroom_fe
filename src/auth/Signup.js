@@ -68,7 +68,7 @@ export default function Signup() {
           required
           placeholder="confirm password"
           onChange={(e) => setConfirmedPassword(e.target.value)}
-        />
+        /><br/>
                 <input 
           type="text"
           required
