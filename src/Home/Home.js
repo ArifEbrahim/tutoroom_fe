@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.css'
-// import Study from './study.mp4'
+import Study from './study.mp4'
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -14,9 +14,9 @@ export default function Home() {
           <Link to='/signup'>Signup</Link> 
         </div>
       </header>
-      {/* <video className='videoTag' autoPlay loop muted>
+      <video className='videoTag' autoPlay loop muted>
         <source src={Study} type='video/mp4' />
-      </video> */}
+      </video>
       <div className="overlay"></div>
       <div className="text">
         <h3>Learn from the best tutors in the world</h3>
