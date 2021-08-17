@@ -22,6 +22,7 @@ export default function Signup() {
     .then(response => {
       console.log(response)
       sessionStorage.setItem('token', response.data.user.token)
+      sessionStorage.setItem('id', response.data.user.id)
       history.push('/search')
     }).catch(err => {
         console.log(err)
