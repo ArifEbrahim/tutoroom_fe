@@ -18,12 +18,12 @@ export default function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
+          <Route exact path='/upload' component={Upload} />
           <div>
             <Navigation />
             <Route exact path='/search' component={TutorList} />
             <Route exact path='/search/:id' component={TutorProfile} />
             <Route exact path='/profile' component={Profile} />
-            <Route exact path='/upload' component={Upload} />
           </div>
         </Switch>
       </Router>
