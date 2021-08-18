@@ -14,7 +14,7 @@ export default function Profile() {
     .then(response => {
       console.log(response)
       setProfileData(response.data.data.attributes)
-      setFullname(response.data.data.attributes.fullname)
+      setName(response.data.data.attributes.name)
       setSubject(response.data.data.attributes.subject)
       setBio(response.data.data.attributes.bio)
     })
@@ -22,13 +22,14 @@ export default function Profile() {
 
   useEffect(() => {
     getProfile()
+    // eslint-disable-next-line
   }, [])
 
   //then be able to edit profile data
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-  const [fullname, setFullname] = useState('')
+  const [name, setName] = useState('')
   const [subject, setSubject] = useState('')
   const [bio, setBio] = useState('')
 
@@ -37,7 +38,7 @@ export default function Profile() {
     const newData = { 
       bio: bio,
       subject: subject,
-      fullname: fullname
+      name: name
     }
 
     axios.patch(api_url, newData)
@@ -53,7 +54,7 @@ export default function Profile() {
       <Row className='mt-3'>
         <Col xs={3} className='text-center'>
           <Image className='img-thumbnail' src={profileData.image_url}/>
-          <h2>{profileData.fullname}</h2>
+          <h2>{profileData.name}</h2>
           <p>Subject: {profileData.subject}</p>
           <Twitter className='mx-2'/><Facebook className='mx-2'/><Linkedin className='mx-2'/><Instagram className='mx-2'/>
           <div className='mt-3'></div>
@@ -76,7 +77,7 @@ export default function Profile() {
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Full name</Form.Label>
-              <Form.Control type="text" value={fullname} onChange={(e)=> setFullname(e.target.value)}/>
+              <Form.Control type="text" value={name} onChange={(e)=> setName(e.target.value)}/>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Subject</Form.Label>

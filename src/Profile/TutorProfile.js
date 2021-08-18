@@ -12,6 +12,7 @@ export default function TutorProfile() {
 
   useEffect(() => {
     getProfileData()
+    // eslint-disable-next-line
   }, [])
 
   const getProfileData = async () => {
