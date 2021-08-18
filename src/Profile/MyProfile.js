@@ -6,7 +6,7 @@ import { Twitter, Facebook, Linkedin, Instagram } from 'react-bootstrap-icons'
 export default function Profile() {
 
   //first get profile data
-  const userId = sessionStorage.getItem('id')
+  const userId = localStorage.getItem('id')
   const api_url=`http://localhost:3001/api/v1/tutors/${userId}`
   const [profileData, setProfileData] = useState({})
   const getProfile = () => {
