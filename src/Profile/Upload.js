@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import S3 from 'react-aws-s3';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, InputGroup } from 'react-bootstrap';
 
 export default function Upload(props) {
   const fileInput = useRef();
@@ -18,18 +18,23 @@ export default function Upload(props) {
     .then((data) => {
       console.log(data);
       props.setImageURL(data.location)
+      updateBtn()
     });
   };
+  const updateBtn = () => {
+    let btnEl = document.querySelector('#upload-btn')
+    btnEl.style.backgroundColor = 'green'
+    btnEl.style.color = 'white'
+    btnEl.innerText = 'Done!'
+  }
 
   return (
     <>
-      <Form.Group className="mb-3">
-        <Form.Label>Update profile picture</Form.Label>
+      <Form.Label>Update profile picture</Form.Label>
+      <InputGroup className="mb-3">
         <Form.Control type="file" size="sm" ref={fileInput} />
-      </Form.Group>
-      <div className='text-center'>
-        <Button variant='outline-dark' size='sm' onClick={uploadImage}>Upload</Button>
-      </div>
+        <Button id='upload-btn' size='sm' variant="outline-secondary" onClick={uploadImage}>Upload</Button>
+      </InputGroup>
     </>
   )
 }
