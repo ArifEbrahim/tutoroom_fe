@@ -2,10 +2,11 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { Container, Row, Col, Image, Button, Modal, Form } from 'react-bootstrap'
 import { Twitter, Facebook, Linkedin, Instagram } from 'react-bootstrap-icons'
+import { Redirect, useHistory } from 'react-router-dom'
 
 export default function Profile() {
 
-  //first get profile data
+  const history = useHistory()
   const userId = sessionStorage.getItem('id')
   const api_url=`http://localhost:3001/api/v1/tutors/${userId}`
   const [profileData, setProfileData] = useState({})
@@ -21,7 +22,12 @@ export default function Profile() {
   }
 
   useEffect(() => {
+    if (!sessionStorage.token) {
+      alert('Please login or signup to access the website')
+      history.push('/')
+    } else {
     getProfile()
+    }
   }, [])
 
   //then be able to edit profile data
