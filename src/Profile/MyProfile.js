@@ -1,8 +1,8 @@
-import React, {useEffect, useState, useRef } from 'react'
+import React, {useEffect, useState } from 'react'
 import axios from 'axios'
 import { Container, Row, Col, Image, Button, Modal, Form } from 'react-bootstrap'
 import { Twitter, Facebook, Linkedin, Instagram } from 'react-bootstrap-icons'
-import S3 from 'react-aws-s3';
+import Upload from './Upload'
 
 export default function Profile() {
 
@@ -54,23 +54,7 @@ export default function Profile() {
 
   //image upload
   const [imageURL, setImageURL] = useState('')
-  const fileInput = useRef();
-  const uploadImage = () => {
-    let file = fileInput.current.files[0];
-    let newFileName = fileInput.current.files[0].name.replace(/\..+$/, "");
-    const config = {
-      bucketName: process.env.REACT_APP_BUCKET_NAME,
-      region: process.env.REACT_APP_REGION,
-      accessKeyId: process.env.REACT_APP_ACCESS_ID,
-      secretAccessKey: process.env.REACT_APP_ACCESS_KEY 
-    };
-    const ReactS3Client = new S3(config);
-    ReactS3Client.uploadFile(file, newFileName)
-    .then((data) => {
-      console.log(data);
-      setImageURL(data.location)
-    });
-  };
+
 
   return (
     <>
@@ -92,7 +76,6 @@ export default function Profile() {
       </Row>
     </Container>
 
-
     <Modal show={show} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title>Edit profile</Modal.Title>
@@ -111,11 +94,7 @@ export default function Profile() {
               <Form.Label>Bio</Form.Label>
               <Form.Control as='textarea' rows={3} value={bio} onChange={(e)=> setBio(e.target.value)}/>
             </Form.Group> 
-            <Form.Group className="mb-3">
-              <Form.Label>Update profile picture</Form.Label>
-              <Form.Control type="file" size="sm" ref={fileInput} />
-              <Button variant='outline-dark' size='sm' onClick={uploadImage}>Upload</Button>
-            </Form.Group>
+            <Upload setImageURL={setImageURL} />
           </Form>
         </Modal.Body>
         <Modal.Footer>

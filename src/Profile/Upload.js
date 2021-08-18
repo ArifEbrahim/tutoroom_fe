@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import S3 from 'react-aws-s3';
+import { Form, Button } from 'react-bootstrap';
 
-function Upload() {
+export default function Upload(props) {
   const fileInput = useRef();
-  const handleClick = (event) => {
-    event.preventDefault();
+  const uploadImage = () => {
     let file = fileInput.current.files[0];
     let newFileName = fileInput.current.files[0].name.replace(/\..+$/, "");
     const config = {
@@ -14,27 +14,22 @@ function Upload() {
       secretAccessKey: process.env.REACT_APP_ACCESS_KEY 
     };
     const ReactS3Client = new S3(config);
-    ReactS3Client.uploadFile(file, newFileName).then((data) => {
+    ReactS3Client.uploadFile(file, newFileName)
+    .then((data) => {
       console.log(data);
-      if (data.status === 204) {
-        console.log("success");
-      } else {
-        console.log("fail");
-      }
+      props.setImageURL(data.location)
     });
   };
+
   return (
     <>
-      <form className='upload-steps' onSubmit={handleClick}>
-        <label>
-          Upload file:
-          <input type='file' ref={fileInput} />
-        </label>
-        <br />
-        <button type='submit'>Upload</button>
-      </form>
+      <Form.Group className="mb-3">
+        <Form.Label>Update profile picture</Form.Label>
+        <Form.Control type="file" size="sm" ref={fileInput} />
+      </Form.Group>
+      <div className='text-center'>
+        <Button variant='outline-dark' size='sm' onClick={uploadImage}>Upload</Button>
+      </div>
     </>
-  );
+  )
 }
-
-export default Upload;
