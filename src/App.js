@@ -8,6 +8,7 @@ import Profile from './Profile/MyProfile'
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TutorProfile from './Profile/TutorProfile'
+import Upload from './components/Upload'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
+          <Route exact path='/upload' component={Upload} />
           <div>
             <Navigation />
             <Route exact path='/search' component={TutorList} />
