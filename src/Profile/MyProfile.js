@@ -14,7 +14,7 @@ export default function Profile() {
     .then(response => {
       console.log(response)
       setProfileData(response.data.data.attributes)
-      setFullName(response.data.data.attributes.fullname)
+      setFullname(response.data.data.attributes.fullname)
       setSubject(response.data.data.attributes.subject)
       setBio(response.data.data.attributes.bio)
     })
@@ -28,7 +28,7 @@ export default function Profile() {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-  const [fullname, setFullName] = useState('')
+  const [fullname, setFullname] = useState('')
   const [subject, setSubject] = useState('')
   const [bio, setBio] = useState('')
 
@@ -76,7 +76,7 @@ export default function Profile() {
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Full name</Form.Label>
-              <Form.Control type="text" value={fullname} onChange={(e)=> setFullName(e.target.value)}/>
+              <Form.Control type="text" value={fullname} onChange={(e)=> setFullname(e.target.value)}/>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Subject</Form.Label>

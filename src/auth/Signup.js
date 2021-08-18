@@ -49,7 +49,7 @@ export default function Signup() {
                     <Form.Control type="text" required placeholder={subject} onChange={(e)=> setSubject(e.target.value)}/>
                   </Col>
                   <Col>
-                    <Form.Check type="checkbox" value={teacher} onChange={(e) => setUserType(e.target.value = true)} label="I am a teacher" />
+                    <Form.Check type="checkbox" value={teacher} onChange={(e) => setUserType(e.target.value = true)} label="I am a tutor" />
                   </Col>
                 </Row>
               </Form.Group>
