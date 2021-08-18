@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { Container, Row, Col, Image, Button } from 'react-bootstrap'
 import { Twitter, Facebook, Linkedin, Instagram } from 'react-bootstrap-icons'
-import Upload from '../components/Upload.js'
 
 export default function Profile() {
 
