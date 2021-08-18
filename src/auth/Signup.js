@@ -11,13 +11,13 @@ export default function Signup() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [password_confirmation, setConfirmedPassword] = useState("")
-  const [username, setUsername] = useState("")
+  const [fullname, setFullname] = useState("")
   const history = useHistory()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const user = { user:{ email, subject, password, password_confirmation, username, teacher } }
-
+    const user = { user:{ email, subject, password, password_confirmation, fullname, teacher } }
+    
     axios.post("http://localhost:3001/api/users", user)
     .then(response => {
       console.log(response)
@@ -40,7 +40,7 @@ export default function Signup() {
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>Full name</Form.Label>
-                <Form.Control type="text" required placeholder={username} onChange={(e)=> setUsername(e.target.value)}/>
+                <Form.Control type="text" required placeholder={fullname} onChange={(e)=> setFullname(e.target.value)}/>
               </Form.Group>
               <Form.Group className="mb-3">
                 <Row>
