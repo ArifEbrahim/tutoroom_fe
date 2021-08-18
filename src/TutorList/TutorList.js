@@ -4,8 +4,14 @@ import SearchBar from './SearchBar'
 import { Container } from 'react-bootstrap'
 import axios from 'axios'
 import './TutorList.css'
+import { Redirect } from 'react-router-dom'
 
 export default function TutorList() {
+  // if (!sessionStorage.token){
+  //   console.log('pre-redirect')
+  //   <Redirect to="/" />
+  //   console.log('post-redirect')
+  // }
   const [allTutors, setAllTutors] = useState([])
   const [filteredTutors, setFilteredTutors] = useState([])
   // const api_url = 'https://tutoroom.herokuapp.com/api/users'
