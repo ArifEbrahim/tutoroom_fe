@@ -6,7 +6,7 @@ export default function Navigation() {
   
   function logOut()
   {
-    sessionStorage.clear();
+    localStorage.clear();
   }
 
   return (
