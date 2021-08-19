@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState } from 'react'
 import axios from 'axios'
 import { Container, Row, Col, Image, Button, Modal, Form } from 'react-bootstrap'
 import { Twitter, Facebook, Linkedin, Instagram } from 'react-bootstrap-icons'
-import Upload from '../components/Upload.js'
+import Upload from './Upload'
 
 export default function Profile() {
 
@@ -18,6 +18,7 @@ export default function Profile() {
       setName(response.data.data.attributes.name)
       setSubject(response.data.data.attributes.subject)
       setBio(response.data.data.attributes.bio)
+      setImageURL(response.data.data.attributes.image_url)
     })
   }
 
@@ -36,10 +37,12 @@ export default function Profile() {
 
   const updateProfile = () => {
     handleClose()
+
     const newData = { 
       bio: bio,
       subject: subject,
-      name: name
+      name: name,
+      image_url: imageURL
     }
 
     axios.patch(api_url, newData)
@@ -48,6 +51,10 @@ export default function Profile() {
       getProfile()
     })
   }
+
+  //image upload
+  const [imageURL, setImageURL] = useState('')
+
 
   return (
     <>
@@ -67,9 +74,7 @@ export default function Profile() {
         <hr/>
         </Col>
       </Row>
-      <Upload />
     </Container>
-
 
     <Modal show={show} onHide={handleClose}>
         <Modal.Header>
@@ -89,6 +94,7 @@ export default function Profile() {
               <Form.Label>Bio</Form.Label>
               <Form.Control as='textarea' rows={3} value={bio} onChange={(e)=> setBio(e.target.value)}/>
             </Form.Group> 
+            <Upload setImageURL={setImageURL} />
           </Form>
         </Modal.Body>
         <Modal.Footer>
