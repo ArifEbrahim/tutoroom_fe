@@ -7,7 +7,7 @@ import AuthNav from '../Nav/AuthNav'
 export default function Login() {
   const[email, setEmail] = useState('')
   const[password, setPassword] = useState('')
-  const api_url='http://localhost:3001/api/users/login'
+  const api_url = 'http://localhost:3001/api/users/login'
   const history = useHistory()
 
   const handleSubmit = (e) => {

@@ -18,7 +18,6 @@ export default function TutorProfile() {
   const getProfileData = async () => {
     await axios.get(api_url)
     .then(response => {
-      console.log(response.data.data.attributes)
       setProfileData(response.data.data.attributes)
     })
   }

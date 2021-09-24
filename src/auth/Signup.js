@@ -13,12 +13,13 @@ export default function Signup() {
   const [password_confirmation, setConfirmedPassword] = useState("")
   const [fullname, setFullname] = useState("")
   const history = useHistory()
+  const api_url = 'http://localhost:3001/api/users'
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const user = { user:{ email, subject, password, password_confirmation, fullname, teacher } }
     
-    axios.post("http://localhost:3001/api/users", user)
+    axios.post(api_url, user)
     .then(response => {
       console.log(response)
       localStorage.setItem('token', response.data.user.token)
