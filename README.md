@@ -12,7 +12,7 @@ https://user-images.githubusercontent.com/79845719/134516148-ec1f9fc8-8681-49ee-
 - Users can identify as a tutor and appear in search results
 - Users can search for tutors
 - Users have a profile that can be updated e.g. bio
-- Users are given a defualt profile picture
+- Users are given a default profile picture
 - Users can upload their own profile picture
 - Users can contact tutors
 
