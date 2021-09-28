@@ -3,11 +3,9 @@
 A social platform where tutors and students connect with each other. The app was built in two parts, this is the front-end built entirely in React JS. The backend is a Ruby on Rails API and can be found [here](https://github.com/merrynhr/tutoroom_be). 
 
 ## Demo 
-    <iframe width="560" height="315"
-src="https://youtu.be/xcuWWzy8TF4" 
-frameborder="0" 
-allowfullscreen></iframe>
+https://user-images.githubusercontent.com/79845719/134516148-ec1f9fc8-8681-49ee-98d8-6eea7c2992cc.mov
 
+Full video [here](https://youtu.be/xcuWWzy8TF4)
 
 ## Features
 
@@ -16,7 +14,7 @@ allowfullscreen></iframe>
 - Users can identify as a tutor and appear in search results
 - Users can search for tutors
 - Users have a profile that can be updated e.g. bio
-- Users are given a default profile picture
+- Users are given a defualt profile picture
 - Users can upload their own profile picture
 - Users can contact tutors
 
