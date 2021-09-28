@@ -16,7 +16,7 @@ allowfullscreen></iframe>
 - Users can identify as a tutor and appear in search results
 - Users can search for tutors
 - Users have a profile that can be updated e.g. bio
-- Users are given a defualt profile picture
+- Users are given a default profile picture
 - Users can upload their own profile picture
 - Users can contact tutors
 
