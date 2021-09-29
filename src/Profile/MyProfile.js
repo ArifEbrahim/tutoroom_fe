@@ -13,7 +13,6 @@ export default function Profile() {
   const getProfile = () => {
     axios.get(api_url)
     .then(response => {
-      console.log(response)
       setProfileData(response.data.data.attributes)
       setName(response.data.data.attributes.name)
       setSubject(response.data.data.attributes.subject)

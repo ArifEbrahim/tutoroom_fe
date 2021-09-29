@@ -16,7 +16,6 @@ export default function Upload(props) {
     const ReactS3Client = new S3(config);
     ReactS3Client.uploadFile(file, newFileName)
     .then((data) => {
-      console.log(data);
       props.setImageURL(data.location)
       updateBtn()
     });

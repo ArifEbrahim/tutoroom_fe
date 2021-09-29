@@ -21,7 +21,6 @@ export default function Signup() {
     
     axios.post(api_url, user)
     .then(response => {
-      console.log(response)
       localStorage.setItem('token', response.data.user.token)
       localStorage.setItem('id', response.data.user.id)
       history.push('/search')

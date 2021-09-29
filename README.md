@@ -1,6 +1,6 @@
 # Tutoroom (Front-end)
 
-A social platform where tutors and students connect with each other. The app was built in two parts, this is the front-end built entirely in React JS. The backend is a Ruby on Rails API and can be found [here](https://github.com/merrynhr/tutoroom_be). 
+A social platform where tutors and students connect with each other. The app was built in two parts, this is the front-end built entirely in React JS. The backend is a Ruby on Rails API and can be found [here](https://github.com/ArifEbrahim/tutoroom_be). 
 
 ## Demo 
 https://user-images.githubusercontent.com/79845719/134516148-ec1f9fc8-8681-49ee-98d8-6eea7c2992cc.mov
@@ -35,6 +35,8 @@ $ git clone https://github.com/ArifEbrahim/tutoroom_fe
 $ cd tutoroom_fe
 $ npm install
 ```
+
+Ensure you have installed and are running the backend API [here](https://github.com/ArifEbrahim/tutoroom_be)
 
 ### To run React app
 ``` 

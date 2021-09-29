@@ -18,7 +18,6 @@ export default function Login() {
       "password": password
     })
     .then(response => {
-      console.log(response)
       localStorage.setItem('token', response.data.user.token)
       history.push('/search')
     })
