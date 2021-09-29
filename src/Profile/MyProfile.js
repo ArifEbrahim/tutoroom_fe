@@ -46,14 +46,12 @@ export default function Profile() {
 
     axios.patch(api_url, newData)
     .then(response => {
-      console.log(response)
       getProfile()
     })
   }
 
   //image upload
   const [imageURL, setImageURL] = useState('')
-
 
   return (
     <>
