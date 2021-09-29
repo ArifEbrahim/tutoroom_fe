@@ -23,7 +23,7 @@ export default function TutorList() {
     })
   }
 
-  const handleSearch = (e) =>{
+  const handleSearch = () =>{
     let searchValue = document.getElementById('searchText').value.toLowerCase()
     let filteredResult;
     filteredResult = allTutors.filter((tutor) => {

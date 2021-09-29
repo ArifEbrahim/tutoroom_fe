@@ -53,7 +53,6 @@ export default function Profile() {
   //image upload
   const [imageURL, setImageURL] = useState('')
 
-
   return (
     <>
     <Container>
